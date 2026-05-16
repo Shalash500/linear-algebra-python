@@ -1,5 +1,5 @@
 import numpy as np
-from numpy.linalg import *
+from numpy import linalg as LA
 # The basics
 a = np.arange(15).reshape(3, 5)
 print(a)
@@ -78,8 +78,17 @@ print("======================================")
 a = np.array([[1, -1, 0], [1, 0, -1], [-6, 2, 3]])
 print(a)
 print("--------------")
-print(inv(a))       # matrix inverse
+print(LA.inv(a))       # matrix inverse
 print("--------------")
 print(a.transpose())    # matrix transpose
 print("--------------")
-print(det(a))       # matrix determinant
+print(LA.det(a))       # matrix determinant
+print("--------------")
+print(LA.norm(a))      # matrix norm
+print("--------------")
+print(LA.matrix_rank(a))    # matrix rank
+print("--------------")
+a = np.array([[1, 2], [3, 5]])
+b = np.array([1, 2])
+print(LA.solve(a, b))   # solve linear equations system
+
